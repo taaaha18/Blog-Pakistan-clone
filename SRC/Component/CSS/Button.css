@@ -1,0 +1,180 @@
+
+.dynamic-btn {
+  font-family: inherit;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  outline: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  user-select: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+.dynamic-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.5s;
+}
+
+.dynamic-btn:hover::before {
+  left: 100%;
+}
+
+
+.dynamic-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.dynamic-btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+.dynamic-btn--disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+.dynamic-btn--disabled:hover::before {
+  left: -100%;
+}
+
+/* Button Sizes */
+.dynamic-btn--small {
+  padding: 8px 20px;
+  font-size: 12px;
+  min-width: 80px;
+  height: 36px;
+}
+
+.dynamic-btn--medium {
+  padding: 12px 30px;
+  font-size: 14px;
+  min-width: 120px;
+  height: 44px;
+}
+
+.dynamic-btn--large {
+  padding: 16px 40px;
+  font-size: 16px;
+  min-width: 160px;
+  height: 52px;
+}
+
+
+.dynamic-btn--primary {
+  background: linear-gradient(135deg, #2d8659 0%, #1c6f46 100%);
+  color: white;
+}
+
+.dynamic-btn--primary:hover {
+  background: linear-gradient(135deg, #2d8659 0%, #1c6f46 100%);
+}
+
+.dynamic-btn--secondary {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+}
+
+.dynamic-btn--secondary:hover {
+  background: linear-gradient(135deg, #ed7de8 0%, #f24458 100%);
+}
+
+.dynamic-btn--success {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  color: white;
+}
+
+.dynamic-btn--success:hover {
+  background: linear-gradient(135deg, #3d98fe 0%, #00d9fe 100%);
+}
+
+.dynamic-btn--danger {
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  color: white;
+}
+
+.dynamic-btn--danger:hover {
+  background: linear-gradient(135deg, #f85d8a 0%, #fed02e 100%);
+}
+
+.dynamic-btn--warning {
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  color: #333;
+}
+
+.dynamic-btn--warning:hover {
+  background: linear-gradient(135deg, #ffe4bc 0%, #fb9d7a 100%);
+}
+
+.dynamic-btn--outline {
+  background: transparent;
+  border: 2px solid #667eea;
+  color: #667eea;
+}
+
+.dynamic-btn--outline:hover {
+  background: #667eea;
+  color: white;
+}
+
+.dynamic-btn--ghost {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #333;
+}
+
+.dynamic-btn--ghost:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+
+@keyframes ripple {
+  to {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+
+.dynamic-btn:focus-visible {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+  .dynamic-btn--small {
+    min-width: 70px;
+    padding: 8px 16px;
+  }
+  
+  .dynamic-btn--medium {
+    min-width: 100px;
+    padding: 10px 24px;
+  }
+  
+  .dynamic-btn--large {
+    min-width: 140px;
+    padding: 14px 32px;
+  }
+}

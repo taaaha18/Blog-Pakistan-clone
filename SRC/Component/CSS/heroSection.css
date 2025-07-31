@@ -1,0 +1,130 @@
+/* src/components/heroSection.css */
+.hero {
+  min-height: 60vh;
+  width: 100%;
+  background: linear-gradient(135deg, #e6d9d5 0%, #dae2dc 50%, #e6fffa 100%);
+  position: relative;
+  overflow: visible; /* Allow image to extend beyond */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 40px 20px 0;
+  z-index: 10;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 15;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 3rem;
+}
+
+.card-grid {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 20px;
+  padding: 2rem;
+  flex-wrap: wrap; /* Optional for responsiveness */
+}
+
+/* Left big card */
+.left-card {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+  height: 600px;
+}
+
+/* Right 2x2 cards */
+.right-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+  height: 600px;
+}
+
+.align-left {
+  text-align: left;
+  margin-left: 5px;
+}
+
+
+.buttons{
+  padding: 10px;
+  margin: 20px;
+}
+.second-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  flex: 1;
+  min-width: 300px;
+  max-width: 95%;
+  height: 600px;
+  margin: 20px;
+}
+.t3rd_card {
+  display: flex;
+  flex-direction: row; 
+  gap: 20px;
+  padding: 2rem;
+  flex-wrap: wrap;
+}
+
+.down_left-card {
+  flex: 1;
+  min-width: 240px;
+  max-width: 350px;
+  height: 450px; /* Adjust if needed */
+}
+
+.down_right_cards{
+  flex: 2;
+  min-width: 300px;
+}
+.pricecard{
+  margin:20px
+}
+.IT {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.align-right{
+  flex: 1;
+  text-align: center;
+}
+.left,.right{
+   flex: 1;
+  
+}
+.IT_cards{
+   display: flex;
+  gap: 20px; 
+}
+
+.blog {
+  display: flex;
+  gap: 20px; 
+  flex-wrap: wrap; 
+  justify-content: space-between; }
+
+.B_one, .B_two, .B_three,.B_four {
+  flex: 1;              
+  min-width: 300px;     
+  max-width: 32%;       
+}
+.left-card-grid-container{
+  margin:20px;
+  border-top: 1px solid black;
+}

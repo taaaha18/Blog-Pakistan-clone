@@ -1,0 +1,199 @@
+
+.section-heading.animate {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.primary-text {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.highlight-text {
+  position: relative;
+  transition: all 0.3s ease;
+  font-weight: inherit;
+}
+
+.space {
+  display: inline-block;
+  width: 0.3em;
+}
+
+.section-heading-container {
+  display: inline-block; /* Ensure width matches text */
+  position: relative;
+    margin-left: 0;
+  margin-right: auto;
+}
+
+.section-heading {
+  display: inline-block; /* This helps match underline width */
+  position: relative;
+}
+
+.underline {
+  height: 4px;
+  background-color: #2d8659;
+  width: 10%;
+  margin-top: 8px;
+  transition: width 0.3s ease;
+  transform-origin: left; /* Ensures expansion happens from left */
+}
+
+.section-heading-container:hover .underline {
+  width: 220px;
+  opacity: 1;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    width: 0;
+  }
+  to {
+    width: 60px;
+  }
+}
+
+.section-heading.animate .underline {
+  animation: slideIn 0.6s ease-out 0.3s both;
+}
+
+/* Hover effects */
+.section-heading-container:hover .primary-text {
+  transform: translateY(-2px);
+}
+
+.section-heading-container:hover .highlight-text {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+/* Text alignment variations */
+.section-heading-container[style*="center"] .underline {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-heading-container[style*="right"] .underline {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .section-heading {
+    font-size: 36px !important;
+  }
+  
+  .underline {
+    width: 50px;
+    height: 3px;
+    margin-top: 10px;
+  }
+  
+  .section-heading-container:hover .underline {
+    width: 65px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-heading {
+    font-size: 28px !important;
+  }
+  
+  .underline {
+    width: 40px;
+    height: 3px;
+    margin-top: 8px;
+  }
+  
+  .section-heading-container:hover .underline {
+    width: 55px;
+  }
+}
+
+/* Custom variants */
+.section-heading-container.custom-heading .underline {
+  height: 6px;
+  width: 100px;
+  border-radius: 3px;
+}
+
+.section-heading-container.custom-heading:hover .underline {
+  width: 100%;
+}
+
+/* Alternative styles */
+.section-heading-container.minimal .underline {
+  display: none;
+}
+
+.section-heading-container.bold .section-heading {
+  font-weight: 800 !important;
+  letter-spacing: -0.03em;
+}
+
+.section-heading-container.gradient-text .highlight-text {
+  background: linear-gradient(45deg, #2d8659, #4CAF50);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Loading state */
+.section-heading-container.loading .section-heading {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loadingText 1.5s infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@keyframes loadingText {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Focus and accessibility */
+.section-heading-container:focus-within {
+  outline: 2px solid #2d8659;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* Print styles */
+@media print {
+  .section-heading-container {
+    break-inside: avoid;
+  }
+  
+  .underline {
+    background: #000 !important;
+  }
+}
+
+.section-heading-container[style*="left"] .underline {
+  margin-left: 0;
+  margin-right: auto;
+}
+.align-left {
+  text-align: left;
+}
+
